@@ -1,0 +1,21 @@
+THIS PROJECT IS FOR CREATING RESOURCES IN AWS
+*******************************************************************
+Create a full working VPC.
+With 2 public subnets and 2 private subnets.
+
+Create 2 ec2s all with the T2 micro capacity and use any of the Linux image.
+ All these to done with terraform and in the Ireland Region.
+
+Create a simple S3 bucket.
+
+Create 2 TFvars environments for these and let the practice guide you.
+(Choose what you want to put in each Tf.vars environment)
+
+Make as many as you can where possible variable.
+
+Attempt to have a few resources in outputs as well
+
+NB:
+I have added a static website in the file
+And a .txt file in the bucket as well
+********************************************************************
