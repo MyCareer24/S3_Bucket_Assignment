@@ -1,13 +1,14 @@
 
 #CREATING 2 EC2 INSTANCES IN PUBLIC SUBNETS WITH SAME AVAILABILITY ZONE
 resource "aws_instance" "Project_EC2_Instance_A" {
-    ami = "ami-0f007bf1d5c770c6e"
-    instance_type = "t2.micro"
+    ami = var.project_ami
+    instance_type = var.Project_Instance_Size
     #vpc_security_group_ids  = ["sg-0ee23c4d423426f60"]
     security_groups = [aws_security_group.Proj-Sec-grp.id]
     subnet_id = aws_subnet.Project_PubSub1.id
     key_name = var.key_name
     associate_public_ip_address = true
+    
     user_data = <<EOF
     #!/bin/bash
     yum update -y
@@ -26,14 +27,15 @@ resource "aws_instance" "Project_EC2_Instance_A" {
 
       
 resource "aws_instance" "Project_EC2_Instance_B" {
-    ami = "ami-0f007bf1d5c770c6e"
-    instance_type = "t2.micro"
+    ami = var.project_ami
+    instance_type = var.Project_Instance_Size
     #vpc_security_group_ids  = ["sg-0ee23c4d423426f60"]
     security_groups = [aws_security_group.Proj-Sec-grp.id]
     subnet_id = aws_subnet.Project_PubSub2.id
     key_name = var.key_name
     associate_public_ip_address = true
-     user_data = <<EOF
+    
+    user_data = <<EOF
     #!/bin/bash
     yum update -y
     yum install -y nginx

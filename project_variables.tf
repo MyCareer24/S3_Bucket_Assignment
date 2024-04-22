@@ -1,8 +1,15 @@
 #VARIABLE FOR INSTANCE TYPE
-variable "Project_Instance_Size" {
-  type = string
-  default = "t2.micro" 
-   description = "This is the instance size"
+variable "project_Instance_Size" {
+  #type = string
+  #default = "t2.micro" 
+   #description = "This is the instance size"
+}
+
+#VARIABLE FOR AMAZON MACHINE IMAGE(AMI)
+variable "project_ami" {
+    #description = "Amazon machine image to use for ec2 instance"
+    #type = string
+    #default = "ami-0d421d84814b7d51c" #Amazon Linux image Region eu-west-1
 }
 
 
