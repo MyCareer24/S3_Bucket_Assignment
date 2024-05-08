@@ -2,7 +2,7 @@
 #CREATING 2 EC2 INSTANCES IN PUBLIC SUBNETS WITH SAME AVAILABILITY ZONE
 resource "aws_instance" "Project_EC2_Instance_A" {
     ami = var.project_ami
-    instance_type = var.Project_Instance_Size
+    instance_type = var.project_Instance_Size
     #vpc_security_group_ids  = ["sg-0ee23c4d423426f60"]
     security_groups = [aws_security_group.Proj-Sec-grp.id]
     subnet_id = aws_subnet.Project_PubSub1.id
@@ -28,7 +28,7 @@ resource "aws_instance" "Project_EC2_Instance_A" {
       
 resource "aws_instance" "Project_EC2_Instance_B" {
     ami = var.project_ami
-    instance_type = var.Project_Instance_Size
+    instance_type = var.project_Instance_Size
     #vpc_security_group_ids  = ["sg-0ee23c4d423426f60"]
     security_groups = [aws_security_group.Proj-Sec-grp.id]
     subnet_id = aws_subnet.Project_PubSub2.id
